@@ -2,9 +2,11 @@ package hello.controller;
 
 
 import hello.domain.Orders;
+import hello.domain.Review;
 import hello.domain.Tickets;
 import hello.domain.User;
 import hello.repos.OrderRepository;
+import hello.repos.ReviewRepository;
 import hello.repos.TicketsRepository;
 import hello.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,9 @@ public class TicketsController {
 
     @Autowired
     private TicketsRepository ticketRepository;
+
+    @Autowired
+    private ReviewRepository reviewDetailsRepository;
 
     @Autowired
     private UserRepo userRepo;
@@ -73,11 +78,25 @@ public class TicketsController {
         return "menu";
     }
 
+    @GetMapping("/orders")
+    public String orders(HttpServletRequest request, Map<String, Object> model) {
+        Principal principal = request.getUserPrincipal();
+        model.put("usernamet", principal.getName());
+        Iterable<Review> usersIterable = reviewDetailsRepository.findAll();
+        model.put("orders", usersIterable);
+        return "orders";
+    }
+
     @RequestMapping(value = "/addorder", method = RequestMethod.POST)
     public String addOrder(@RequestParam String login, String id,  Map<String, Object> model) {
         saveOrderDetails(login, id);
 //сделать переход на страницу с заказами!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        return "index";
+        Iterable<Orders> ordersIterable = orderRepository.findAll();
+        for(Orders i : ordersIterable) {
+//
+        }
+        model.put("orders", usersIterable);
+        return "orders";
     }
 
     private void saveOrderDetails(String login, String id)
@@ -97,4 +116,6 @@ public class TicketsController {
         orders_item.setId_user(find_user);
         orderRepository.save(orders_item);
     }
+
+
 }
