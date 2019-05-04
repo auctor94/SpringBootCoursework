@@ -79,11 +79,11 @@
 							<div class="order-type type-one">
 								<figure class="clearfix">
 									<div class="img-holder">
-										<img src="/static/images/time.png" alt="">
+										<img src="/static/images/times.png" alt="">
 									</div>
 									<figcaption>
 										<h3><span>Время</span> работы</h3>
-										<a class="button-primary btn" href="/time">Подробнее</a>
+										<a class="button-primary btn" href="/times">Подробнее</a>
 									</figcaption>
 								</figure>
 							</div>
@@ -111,7 +111,7 @@
 									</div>
 									<figcaption>
 										<h3><span>Как нас найти?</span></h3>
-										<a class="button-primary btn" href="#">Подробнее</a>
+										<a class="button-primary btn" href="contactus">Подробнее</a>
 									</figcaption>
 								</figure>
 							</div>
@@ -490,19 +490,19 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed, qui quam ipsa nobis, dolore assumenda culpa earum esse accusantium quas quidem iusto in aut reiciendis, provident, deserunt iste perferendis.</p>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquam exercitationem repellat, harum minima, tenetur esse! Aut neque ex, expedita fugiat, alias animi consequatur culpa dignissimos laboriosam non. Eum, deleniti.</p>
 							<div class="event-timer" data-date="2016/10/31">
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>25</h3>
 									<h5>days</h5>
 								</div>
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>18</h3>
 									<h5>hours</h5>
 								</div>
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>59</h3>
 									<h5>minutes</h5>
 								</div>
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>44</h3>
 									<h5>seconds</h5>
 								</div>
@@ -519,19 +519,19 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed, qui quam ipsa nobis, dolore assumenda culpa earum esse accusantium quas quidem iusto in aut reiciendis, provident, deserunt iste perferendis.</p>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquam exercitationem repellat, harum minima, tenetur esse! Aut neque ex, expedita fugiat, alias animi consequatur culpa dignissimos laboriosam non. Eum, deleniti.</p>
 							<div class="event-timer" data-date="2016/11/30">
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>25</h3>
 									<h5>days</h5>
 								</div>
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>18</h3>
 									<h5>hours</h5>
 								</div>
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>59</h3>
 									<h5>minutes</h5>
 								</div>
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>44</h3>
 									<h5>seconds</h5>
 								</div>
@@ -548,19 +548,19 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed, qui quam ipsa nobis, dolore assumenda culpa earum esse accusantium quas quidem iusto in aut reiciendis, provident, deserunt iste perferendis.</p>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquam exercitationem repellat, harum minima, tenetur esse! Aut neque ex, expedita fugiat, alias animi consequatur culpa dignissimos laboriosam non. Eum, deleniti.</p>
 							<div class="event-timer" data-date="2016/11/1">
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>25</h3>
 									<h5>days</h5>
 								</div>
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>18</h3>
 									<h5>hours</h5>
 								</div>
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>59</h3>
 									<h5>minutes</h5>
 								</div>
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>44</h3>
 									<h5>seconds</h5>
 								</div>
@@ -577,19 +577,19 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed, qui quam ipsa nobis, dolore assumenda culpa earum esse accusantium quas quidem iusto in aut reiciendis, provident, deserunt iste perferendis.</p>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquam exercitationem repellat, harum minima, tenetur esse! Aut neque ex, expedita fugiat, alias animi consequatur culpa dignissimos laboriosam non. Eum, deleniti.</p>
 							<div class="event-timer" data-date="2016/10/30">
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>25</h3>
 									<h5>days</h5>
 								</div>
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>18</h3>
 									<h5>hours</h5>
 								</div>
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>59</h3>
 									<h5>minutes</h5>
 								</div>
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>44</h3>
 									<h5>seconds</h5>
 								</div>
@@ -606,19 +606,19 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed, qui quam ipsa nobis, dolore assumenda culpa earum esse accusantium quas quidem iusto in aut reiciendis, provident, deserunt iste perferendis.</p>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquam exercitationem repellat, harum minima, tenetur esse! Aut neque ex, expedita fugiat, alias animi consequatur culpa dignissimos laboriosam non. Eum, deleniti.</p>
 							<div class="event-timer" data-date="2016/10/29">
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>25</h3>
 									<h5>days</h5>
 								</div>
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>18</h3>
 									<h5>hours</h5>
 								</div>
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>59</h3>
 									<h5>minutes</h5>
 								</div>
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>44</h3>
 									<h5>seconds</h5>
 								</div>
@@ -635,19 +635,19 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed, qui quam ipsa nobis, dolore assumenda culpa earum esse accusantium quas quidem iusto in aut reiciendis, provident, deserunt iste perferendis.</p>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquam exercitationem repellat, harum minima, tenetur esse! Aut neque ex, expedita fugiat, alias animi consequatur culpa dignissimos laboriosam non. Eum, deleniti.</p>
 							<div class="event-timer" data-date="2016/10/28">
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>25</h3>
 									<h5>days</h5>
 								</div>
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>18</h3>
 									<h5>hours</h5>
 								</div>
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>59</h3>
 									<h5>minutes</h5>
 								</div>
-								<div class="time-circle">
+								<div class="times-circle">
 									<h3>44</h3>
 									<h5>seconds</h5>
 								</div>
@@ -657,32 +657,8 @@
 				</div>
 			</div>
 		</section>
-        <section class="contact-sectn">
-            <div class="container">
-                <div>
-                    <div class="section-number"><span>09</span></div>
-                    <div class="section-heading">
-                        <h1><span>Контакты</span></h1>
-                    </div>
-                </div>
-            </div>
-            <div class="contact-us">
-                <div class="add">
-                    <div class="add-inner-wrapper">
 
-
-                        <h3><span>16</span> Вокзальная</h3>
-                        <p>Минская область, Минский район, аг. Ждановичи</p>
-                    </div>
-                </div>
-
-
-                <div id="map-canvas" ></div>
-            </div>
-        </section>
-
-
-		<footer>
+        <footer>
 			<div class="upper">
 				<div class="container">
 
@@ -690,18 +666,18 @@
 					<div class="footer-nav-wrapper">
 						<ul class="footer-nav clearfix">
 							<li><a href="index.ftl">Домашняя страница</a></li>
-							<li><a href="menu.">Меню</a></li>
+							<li><a href="menu">Меню</a></li>
 							<li><a href="gallery">Заказ</a></li>
 							<li><a href="shopcart.html">Cart</a></li>
-							<li><a href="contactus.html">Contact</a></li>
+							<li><a href="contactus">Контакты</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="lower">
 				<div class="container">
-					<a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-					<small>&copy; 2016 0efforttheme. Trademarks and brands are the property of their respective owners.</small>
+                    <a href="#" class="back-to-top">↑↑↑</a>
+					<small>&copy; 2019 Timothy fcuking coursework. Trademarks and brands are the property of their respective owners.</small>
 				</div>
 			</div>
 		</footer>

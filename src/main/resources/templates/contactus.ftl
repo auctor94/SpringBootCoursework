@@ -37,8 +37,7 @@
 					    <div class="collapse navbar-collapse" id="coffeeNavbarPrimary">
 					      <ul class="nav navbar-nav navbar-right">
 					        <li><a href="index">Домашняя страница</a></li>
-					        <li><a href="menu">Меню</a></li>
-                              <li><a href="gallery">Заказ</a></li>
+					        <li><a href="menu">Билеты</a></li>
 					        <li class="active"><a href="contactus">Контакты</a></li>
 
 
@@ -70,25 +69,23 @@
 		<footer>
 			<div class="upper">
 				<div class="container">
-					<h2>Let's visit our</h2>
-					<h3>Shop Today</h3>
+					<h2>Ждем вас с нетерпением</h2>
+					<h3>Приходите сами и приводите друзей, коллег и матушку</h3>
 
 					<div>
-						<img src="images/logo.png" alt="">	
+						<img src="/static/images/logo.png" alt="">
 					</div>
 					
 
-					<a href="store.html" class="order-btn">Order your coffee now !</a>
+					<a href="menu" class="order-btn">Забронировать билет прямо сейчас!</a>
 
-					<div class="footer-nav-wrapper">
-						<ul class="footer-nav clearfix">
-							<li><a href="index">Home</a></li>
-							<li><a href="menu">Menu</a></li>
-							<li><a href="gallery">Gallery</a></li>
-							<li><a href="shopcart">Cart</a></li>
-							<li><a href="contactus">Contact</a></li>
-						</ul>
-					</div>
+                    <div class="footer-nav-wrapper">
+                        <ul class="footer-nav clearfix">
+                            <li><a href="index.ftl">Домашняя страница</a></li>
+                            <li><a href="menu">Заказ</a></li>
+                            <li><a href="contactus">Контакты</a></li>
+                        </ul>
+                    </div>
 				</div>
 			</div>
 			<div class="lower">

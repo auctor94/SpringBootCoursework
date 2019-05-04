@@ -129,21 +129,10 @@
         <div>
             <div class="section-heading">
                 <h1><span>Контакты</span></h1>
-            </div>
-        </div>
-    </div>
-    <div class="contact-us">
-        <div class="add">
-            <div class="add-inner-wrapper">
-
-
                 <h3><span>16</span> Вокзальная</h3>
                 <p>Минская область, Минский район, аг. Ждановичи</p>
             </div>
         </div>
-
-
-        <div id="map-canvas"></div>
     </div>
 </section>
 
@@ -157,8 +146,7 @@
                 <ul class="footer-nav clearfix">
                     <li><a href="index">Домашняя страница</a></li>
                     <li><a href="menu">Меню</a></li>
-                    <li><a href="gallery">заказ</a></li
-                    <li><a href="contactus.html">Contact</a></li>
+                    <li><a href="contactus">Контакты</a></li>
                 </ul>
             </div>
         </div>
@@ -177,8 +165,6 @@
 
 <script src="/static/plugins.js"></script>
 
-
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <script src="/static/main.js"></script>
 
 
