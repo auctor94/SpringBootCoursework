@@ -45,8 +45,7 @@
                             <li><a href="gallery">Заказ</a></li>
                             <li><a href="store.html">store</a></li>
                             <li><a href="contactus">Контакты</a></li>
-
-                            <li><a href="shopcart.html">Cart </a></li>
+                            <li><a href="/logout">Выйти из аккаунта</a></li>
 
                         </ul>
                     </div>
@@ -146,8 +145,8 @@
                 <ul class="footer-nav clearfix">
                     <li><a href="index">Домашняя страница</a></li>
                     <li><a href="menu">Меню</a></li>
-                    <li><a href="gallery">заказ</a></li
-                    <li><a href="contactus.html">Contact</a></li>
+                    <li><a href="contactus">Контакты</a></li>
+                    <li><a href="/logout">Выйти из аккаунта</a></li>
                 </ul>
             </div>
         </div>

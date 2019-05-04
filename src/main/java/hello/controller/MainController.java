@@ -2,10 +2,7 @@ package hello.controller;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
-import hello.domain.Review;
-import hello.domain.Tickets;
-import hello.domain.User;
-import hello.domain.Users;
+import hello.domain.*;
 import hello.repos.ReviewRepository;
 import hello.repos.TicketsRepository;
 import hello.repos.UserRepo;
@@ -19,6 +16,9 @@ import sun.security.krb5.internal.Ticket;
 import javax.servlet.http.HttpServletRequest;
 import java.io.StringWriter;
 import java.security.Principal;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -41,12 +41,34 @@ private UserRepo userRepo;
 
     @GetMapping("/")
     public String greeting(Map<String, Object> model) {
+        User rev;
+        ArrayList<ListReviews> result = new ArrayList<>();
+        Iterable<Review> reviewsIterable = reviewDetailsRepository.findAll();
+        for (Review i : reviewsIterable) {
+            rev = userRepo.findOneById(i.getIdUser().getId());
+            String pattern = "YYYY/MM/dd HH:mm:ss";
+            DateFormat df = new SimpleDateFormat(pattern);
+            String todayAsString = df.format(i.getDate());
+            result.add(new ListReviews(rev.getUsername(),i.getComment(),todayAsString));
+        }
+        model.put("reviews",result);
         return "index";
     }
 
-
+//вынести в отдельный метод!!!!!!!!!!!!!!!
     @GetMapping("/index")
     public String index(Map<String, Object> model) {
+        User rev;
+        ArrayList<ListReviews> result = new ArrayList<>();
+        Iterable<Review> reviewsIterable = reviewDetailsRepository.findAll();
+        for (Review i : reviewsIterable) {
+            rev = userRepo.findOneById(i.getIdUser().getId());
+            String pattern = "YYYY/MM/dd HH:mm:ss";
+            DateFormat df = new SimpleDateFormat(pattern);
+            String todayAsString = df.format(i.getDate());
+            result.add(new ListReviews(rev.getUsername(),i.getComment(),todayAsString));
+        }
+        model.put("reviews",result);
         return "index";
     }
 
@@ -64,7 +86,7 @@ private UserRepo userRepo;
     @RequestMapping(value = "/order", method = RequestMethod.POST)
 public String order(@RequestParam String login, String comment,  Map<String, Object> model) {
         saveReviewDetails(login,comment);
-        return "index";
+        return "redirect:/index";
     }
 
 
