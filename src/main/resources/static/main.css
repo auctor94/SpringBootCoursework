@@ -1980,7 +1980,8 @@ Events
 Contact
  */
 .contact-sectn {
-  padding-bottom: 0; }
+  padding-bottom: 0;
+background-color: rgba(82, 194, 221, 0.32);}
 
 .contact-us .add {
   background: url("../images/contact-bg.jpg") top left no-repeat;
@@ -1990,10 +1991,7 @@ Contact
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
-  @media (min-width: 992px) {
-    .contact-us .add {
-      float: left;
-      width: 50%; } }
+
 
 .contact-us h2 {
   font-family: "Open Sans", sans-serif;

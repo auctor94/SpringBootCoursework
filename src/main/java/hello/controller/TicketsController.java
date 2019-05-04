@@ -1,10 +1,7 @@
 package hello.controller;
 
 
-import hello.domain.Orders;
-import hello.domain.Review;
-import hello.domain.Tickets;
-import hello.domain.User;
+import hello.domain.*;
 import hello.repos.OrderRepository;
 import hello.repos.ReviewRepository;
 import hello.repos.TicketsRepository;
@@ -20,11 +17,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.Map;
 
 @Controller
-@PreAuthorize("hasAuthority('ADMIN')")
+//@PreAuthorize("hasAuthority('ADMIN')")
 public class TicketsController {
 
     @Autowired
@@ -46,28 +43,7 @@ public class TicketsController {
         return "tickets";
     }
 
-    @RequestMapping(value = "/addticket", method = RequestMethod.POST)
-    public String order(@RequestParam String cost, @RequestParam String name, @RequestParam String age,
-                        @RequestParam String time, @RequestParam String zone, @RequestParam String sale, Map<String, Object> model) {
-        Tickets n = new Tickets();
-        double dnum = Double.parseDouble(cost);
-        n.setCost(dnum);
-        n.setNameTicket(name);
-        n.setAge(age);
-        int intnum = Integer.parseInt(time);
-        n.setTime(intnum);
-        n.setZone(zone);
-        if (sale != "")
-        {
 
-            dnum = Double.parseDouble(sale);
-            n.setSale(dnum);
-        }
-        ticketRepository.save(n);
-        Iterable<Tickets> ticketsIterable = ticketRepository.findAll();
-        model.put("tickets", ticketsIterable);
-        return "menu";
-    }
 
     @GetMapping("/menu")
     public String menu(HttpServletRequest request, Map<String, Object> model) {
@@ -79,29 +55,55 @@ public class TicketsController {
     }
 
     @GetMapping("/orders")
-    public String orders(HttpServletRequest request, Map<String, Object> model) {
+    public String orders(HttpServletRequest request,  Map<String, Object>  model) {
+        //получаем username текущего пользователя
         Principal principal = request.getUserPrincipal();
+        String name_user = principal.getName();
         model.put("usernamet", principal.getName());
-        Iterable<Review> usersIterable = reviewDetailsRepository.findAll();
-        model.put("orders", usersIterable);
+
+        ArrayList<TableOrders> result = new ArrayList<>();
+
+        int id, current_id;
+        Tickets id_ticket;
+        User id_user, current_user;
+
+        //получение айди текущего пользователя
+        current_user = userRepo.findByUsername(name_user);
+        current_id = current_user.getId().intValue();
+
+        Iterable<Orders> ordersIterable = orderRepository.findAll();
+        for (Orders i : ordersIterable) {
+            TableOrders temp = new TableOrders();
+            id_ticket = i.getId_ticket();
+            id_user = i.getId_user();
+            if (id_user.getId().intValue() == current_id) {
+
+                temp.setId(String.valueOf(id_ticket.getTicketId()));
+                temp.setType(id_ticket.getNameTicket());
+                if (id_ticket.getCost() != 0) {
+                    temp.setCost(String.valueOf(id_ticket.getCost() / 100 * id_ticket.getSale()));
+                } else {
+                    temp.setCost(String.valueOf(id_ticket.getCost()));
+                }
+                temp.setDate(i.getDate());
+                temp.setTimes(i.getTime());
+                result.add(temp);
+            }
+        }
+        model.put("table", result);
         return "orders";
     }
 
     @RequestMapping(value = "/addorder", method = RequestMethod.POST)
-    public String addOrder(@RequestParam String login, String id,  Map<String, Object> model) {
-        saveOrderDetails(login, id);
-//сделать переход на страницу с заказами!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        Iterable<Orders> ordersIterable = orderRepository.findAll();
-        for(Orders i : ordersIterable) {
-//
-        }
-        model.put("orders", usersIterable);
-        return "orders";
+    public String addOrder(@RequestParam String login, String id, @RequestParam(value = "date") String date, @RequestParam(value = "time") String time, Map<String, Object> model) {
+        saveOrderDetails(login, id, date, time);
+        //сделать переход на страницу с заказами!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        return "redirect:/orders";
     }
 
-    private void saveOrderDetails(String login, String id)
-    {
-        User find_user =  new User();
+    private void saveOrderDetails(String login, String id, String date, String time) {
+        User find_user = new User();
         if (login != null && !login.isEmpty()) {
             find_user = userRepo.findByUsername(login);
         }
@@ -111,7 +113,8 @@ public class TicketsController {
             find_ticket = ticketRepository.findOneByTicketId(find_id);
         }
         Orders orders_item = new Orders();
-        orders_item.setDate(new Date());
+        orders_item.setDate(date);
+        orders_item.setTime(time);
         orders_item.setId_ticket(find_ticket);
         orders_item.setId_user(find_user);
         orderRepository.save(orders_item);

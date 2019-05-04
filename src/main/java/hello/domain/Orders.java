@@ -16,8 +16,18 @@ public class Orders {
     private int orderId;
 
     @Column(name="date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date date;
+    private String date;
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    @Column(name="time")
+    private String time;
 
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -41,11 +51,11 @@ public class Orders {
         this.orderId = orderId;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

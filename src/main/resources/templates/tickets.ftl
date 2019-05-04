@@ -81,7 +81,7 @@
 
                     <div class="form-group">
                         <p>Введите количество часов:</p>
-                        <p><input type="number" class="form-control" size="3" name="time" min="1" max="5" value="1"></p>
+                        <p><input type="number" class="form-control" size="3" name="times" min="1" max="5" value="1"></p>
                     </div>
                      <textarea placeholder="Описание билета" class="textarea" name="name" required></textarea>
                     <input type="hidden" name="_csrf" value="${_csrf.token}" />

@@ -104,6 +104,9 @@
 
                                         <div class="menu-btn-holder clearfix" style="float: right; margin-top: 100px;">
                                             <form id="myform" action="/addorder" method="post">
+                                                <label for="start">Введите дату и время</label>
+                                                <input type="date" id="start" name="date" value="2018-07-22" min="2018-01-01" max="2019-12-31" style="width: 150px;">
+                                                <input type="time" id="start" name="time" >
                                                 <input type="submit" value="Заказать сейчас" id="login-button" />
                                                 <input type="hidden" name="id" value="${ticket.ticketId}">
                                                 <input type="hidden" name="login" value="${usernamet}">
@@ -163,7 +166,7 @@
     <div class="lower">
         <div class="container">
             <a href="#" class="back-to-top">↑↑↑</a>
-            <small></small>
+            <small>&copy; 2019 Timothy fcuking coursework. Trademarks and brands are the property of their respective owners.</small>
         </div>
     </div>
 </footer>

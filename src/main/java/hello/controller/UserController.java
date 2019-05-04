@@ -1,7 +1,11 @@
 package hello.controller;
 
+import hello.domain.Orders;
 import hello.domain.Role;
+import hello.domain.Tickets;
 import hello.domain.User;
+import hello.repos.OrderRepository;
+import hello.repos.TicketsRepository;
 import hello.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -20,6 +24,12 @@ import java.util.stream.Collectors;
 public class UserController {
     @Autowired
     private UserRepo userRepo;
+
+    @Autowired
+    private TicketsRepository ticketRepository;
+
+    @Autowired
+    private OrderRepository orderRepository;
 
     @GetMapping
     public String userList(Model model) {
@@ -52,5 +62,30 @@ user.getRoles().clear();
         userRepo.save(user);
         return "redirect:/user";
     }
+
+    @RequestMapping(value = "/addticket", method = RequestMethod.POST)
+    public String order(@RequestParam String cost, @RequestParam String name, @RequestParam String age,
+                        @RequestParam String time, @RequestParam String zone, @RequestParam String sale, Map<String, Object> model) {
+        Tickets n = new Tickets();
+        double dnum = Double.parseDouble(cost);
+        n.setCost(dnum);
+        n.setNameTicket(name);
+        n.setAge(age);
+        int intnum = Integer.parseInt(time);
+        n.setTime(intnum);
+        n.setZone(zone);
+        if (sale != "") {
+
+            dnum = Double.parseDouble(sale);
+            n.setSale(dnum);
+        }
+        ticketRepository.save(n);
+        Iterable<Tickets> ticketsIterable = ticketRepository.findAll();
+        model.put("tickets", ticketsIterable);
+        return "menu";
+    }
+
+
+
 
 }

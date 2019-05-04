@@ -3,8 +3,8 @@ package hello.domain;
 public class TableOrders {
 
     private String id;
-    private String _type;
-    private String time;
+    private String type;
+    private String times;
     private String cost;
     private String date;
 
@@ -16,20 +16,20 @@ public class TableOrders {
         this.id = id;
     }
 
-    public String get_type() {
-        return _type;
+    public String getType() {
+        return type;
     }
 
-    public void set_type(String _type) {
-        this._type = _type;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getTime() {
-        return time;
+    public String getTimes() {
+        return times;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setTimes(String times) {
+        this.times = times;
     }
 
     public String getCost() {

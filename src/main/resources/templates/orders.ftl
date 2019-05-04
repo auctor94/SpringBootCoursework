@@ -68,15 +68,16 @@
         </div>
     </div>
 
-    <#if orders??>
+    <#if table??>
                <table id="racetimes">
                    <tr id="firstrow"><th>Id заказа</th><th>Тип билета</th><th>Время действия</th><th>Стоимость</th><th>Дата</th></tr>
-                     <#list orders as order>
-                        <tr><td>#{order.reviewId}</td><td>order.comment</td><td>#{order.idUser}</td><td></td><td>#{order.date}</td></tr>
+                     <#list table as order>
+                        <tr><td>${order.id}</td><td>${order.type}</td><td>${order.times}</td><td>${order.cost}</td><td>${order.date}</td></tr>
                      </#list>
+
                </table>
     <#else>
-									                         <b>У вас нет заказов! <ahref="menu">Заказать билет сейчас </a></b>
+									                         <b>У вас нет заказов! <a href="menu">Заказать билет сейчас </a></b>
     </#if>
 
 
