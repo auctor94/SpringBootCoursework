@@ -68,8 +68,17 @@
                         <p>Введите процент скидки (если необходимо):</p>
                         <p><input type="number" class="form-control" size="3" name="sale" min="1" max="100" value="1"></p>
                     </div>
+
                     <div class="form-group">
-                        <input type="text" class="form-control"  placeholder="Зона" name="zone" required>
+                        <select name="zone" class="form-control">
+                            <option name="zone">Акваторий, SPA, Бани и сауны</option>
+                            <option name="zone">Акваторий, SPA</option>
+                            <option name="zone">Акваторий, Бани и сауны</option>
+                            <option name="zone">SPA, Бани и сауны</option>
+                            <option name="zone">Бани и сауны</option>
+                            <option name="zone">SPA</option>
+                            <option name="zone">Акваторий</option>
+                        </select>
                     </div>
 
                     <div class="form-group">

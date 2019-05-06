@@ -42,8 +42,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="index">Домашняя страница</a></li>
                             <li class="active"><a href="menu">Билеты</a></li>
-                            <li><a href="gallery">Заказ</a></li>
-                            <li><a href="store.html">store</a></li>
+                            <li><a href="gallery">Оставить отзыв</a></li>
                             <li><a href="contactus">Контакты</a></li>
                             <li><a href="/logout">Выйти из аккаунта</a></li>
 
@@ -83,7 +82,7 @@
                                                     <div class="card-right">
                                                         <div class="cuisine-price">
 									                        <#if ticket.sale??>
-                                                                <b>Стоимость билета: ${ticket.cost / 100 * ticket.sale} бел. руб.</b>
+                                                                <b>Стоимость билета: ${ticket.cost?number - (ticket.cost?number/ 100 * ticket.sale?number)} бел. руб.</b>
                                                             <#else>
 									                         <b>Стоимость билета: ${ticket.cost} бел. руб.</b>
                                                           </#if>
@@ -94,9 +93,6 @@
 
                                                 </div>
                                             </div>
-
-
-
                                         </div>
                                         <div class="cuisine-heart" style="float: right;"><b>Время действия билета:
                                             ${ticket.time} ч.</b></div>
@@ -105,7 +101,7 @@
                                             <form id="myform" action="/addorder" method="post">
                                                 <label for="start">Введите дату и время</label>
                                                 <input type="date" id="start" name="date" value="2018-07-22" min="2018-01-01" max="2019-12-31" style="width: 150px;">
-                                                <input type="time" id="start" name="time" >
+                                                <input type="time" id="start" name="time" value="11:00">
                                                 <input type="submit" value="Заказать сейчас" id="login-button" />
                                                 <input type="hidden" name="id" value="${ticket.ticketId}">
                                                 <input type="hidden" name="login" value="${usernamet}">
@@ -146,6 +142,7 @@
                     <li><a href="index">Домашняя страница</a></li>
                     <li><a href="menu">Меню</a></li>
                     <li><a href="contactus">Контакты</a></li>
+                    <li><a href="gallery">Оставить отзыв</a></li>
                     <li><a href="/logout">Выйти из аккаунта</a></li>
                 </ul>
             </div>

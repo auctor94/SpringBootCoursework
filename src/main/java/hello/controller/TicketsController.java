@@ -2,18 +2,12 @@ package hello.controller;
 
 
 import hello.domain.*;
-import hello.repos.OrderRepository;
-import hello.repos.ReviewRepository;
-import hello.repos.TicketsRepository;
-import hello.repos.UserRepo;
+import hello.repos.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
@@ -35,6 +29,9 @@ public class TicketsController {
 
     @Autowired
     private OrderRepository orderRepository;
+    @Autowired
+    private AmusementRepository amusementRepository;
+
 
     @GetMapping("/tickets")
     public String tickets(HttpServletRequest request, Model model) {
@@ -44,13 +41,34 @@ public class TicketsController {
     }
 
 
-
     @GetMapping("/menu")
     public String menu(HttpServletRequest request, Map<String, Object> model) {
         Principal principal = request.getUserPrincipal();
         model.put("usernamet", principal.getName());
+        ArrayList<ListTickets> result = new ArrayList<>();
+        Amusement temp = new Amusement();
         Iterable<Tickets> ticketsIterable = ticketRepository.findAll();
-        model.put("tickets", ticketsIterable);
+        for (Tickets i : ticketsIterable) {
+            ListTickets tmp = new ListTickets();
+            tmp.setAge(i.getAge());
+            tmp.setCost(String.valueOf(i.getCost()));
+            tmp.setNameTicket(i.getNameTicket());
+            tmp.setSale(String.valueOf(i.getSale()));
+            int check = i.getZone();
+            temp = amusementRepository.findOneByAmusementId(check);
+            tmp.setTime(String.valueOf(i.getTime()));
+            tmp.setZone(temp.getDepartment());
+            tmp.setTicketId(String.valueOf(i.getTicketId()));
+            result.add(tmp);
+        }
+        model.put("tickets", result);
+        return "menu";
+    }
+
+    @GetMapping("/orders/{id}")
+    public String editOrder(@PathVariable String id)
+    {
+        System.out.println(id);
         return "menu";
     }
 
@@ -81,7 +99,7 @@ public class TicketsController {
                 temp.setId(String.valueOf(id_ticket.getTicketId()));
                 temp.setType(id_ticket.getNameTicket());
                 if (id_ticket.getCost() != 0) {
-                    temp.setCost(String.valueOf(id_ticket.getCost() / 100 * id_ticket.getSale()));
+                    temp.setCost(String.valueOf(id_ticket.getCost() - (id_ticket.getCost() / 100 * id_ticket.getSale())));
                 } else {
                     temp.setCost(String.valueOf(id_ticket.getCost()));
                 }

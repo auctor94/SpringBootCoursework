@@ -1,9 +1,7 @@
 package hello.controller;
 
-import hello.domain.Orders;
-import hello.domain.Role;
-import hello.domain.Tickets;
-import hello.domain.User;
+import hello.domain.*;
+import hello.repos.AmusementRepository;
 import hello.repos.OrderRepository;
 import hello.repos.TicketsRepository;
 import hello.repos.UserRepo;
@@ -31,9 +29,12 @@ public class UserController {
     @Autowired
     private OrderRepository orderRepository;
 
+    @Autowired
+    private AmusementRepository amusementRepository;
+
     @GetMapping
     public String userList(Model model) {
-        model.addAttribute("users",userRepo.findAll());
+        model.addAttribute("users", userRepo.findAll());
         return "userList";
     }
 
@@ -43,16 +44,17 @@ public class UserController {
         model.addAttribute("roles", Role.values());
         return "userEdit";
     }
+
     @PostMapping
     public String userSave(
             @RequestParam String username,
             @RequestParam Map<String, String> form,
-                           @RequestParam("userID") User user) {
+            @RequestParam("userID") User user) {
         user.setUsername(username);
         Set<String> roles = Arrays.stream(Role.values())
                 .map(Role::name)
                 .collect(Collectors.toSet());
-user.getRoles().clear();
+        user.getRoles().clear();
 
         for (String key : form.keySet()) {
             if (roles.contains(key)) {
@@ -67,13 +69,15 @@ user.getRoles().clear();
     public String order(@RequestParam String cost, @RequestParam String name, @RequestParam String age,
                         @RequestParam String time, @RequestParam String zone, @RequestParam String sale, Map<String, Object> model) {
         Tickets n = new Tickets();
+        Amusement a;
         double dnum = Double.parseDouble(cost);
         n.setCost(dnum);
         n.setNameTicket(name);
         n.setAge(age);
         int intnum = Integer.parseInt(time);
         n.setTime(intnum);
-        n.setZone(zone);
+        a = amusementRepository.findOneByDepartment(zone);
+        n.setZone(a);
         if (sale != "") {
 
             dnum = Double.parseDouble(sale);
@@ -84,8 +88,6 @@ user.getRoles().clear();
         model.put("tickets", ticketsIterable);
         return "menu";
     }
-
-
 
 
 }

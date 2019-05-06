@@ -1,5 +1,9 @@
 package hello.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -23,14 +27,20 @@ public class Tickets {
     @Column(name="time")
     private int time;
 
-    @Column(name="zone")
-    private String zone;
+//    @Column(name="zone")
+//    private int zone;
 
     @Column(name="sale")
     private double sale;
 
-    @OneToMany(mappedBy = "id_user")
-    private Set<Orders> ordersDetails;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "zone", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
+    private Amusement zone;
+
+
+
 
     public int getTicketId() {
         return ticketId;
@@ -72,11 +82,11 @@ public class Tickets {
         this.time = time;
     }
 
-    public String getZone() {
-        return zone;
+    public int getZone() {
+        return zone.getAmusementId();
     }
 
-    public void setZone(String zone) {
+    public void setZone(Amusement zone) {
         this.zone = zone;
     }
 
