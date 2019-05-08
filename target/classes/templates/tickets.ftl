@@ -59,14 +59,14 @@
             </div>
 
             <div class="reservation-form clearfix">
-                <form action="/addticket" id="reservation-form" method="post"  class="clearfix" data-parsley-validate>
+                <form action="/addticket" id="reservation-form" method="post" class="clearfix" data-parsley-validate>
                     <h3>Онлайн <span>Форма Создания</span></h3>
                     <div class="form-group">
                         <input type="text" class="form-control"  placeholder="Цена" name="cost" required>
                     </div>
                     <div class="form-group">
                         <p>Введите процент скидки (если необходимо):</p>
-                        <p><input type="number" class="form-control" size="3" name="sale" min="1" max="100" value="1"></p>
+                        <p><input type="number" class="form-control" size="3" name="sale" min="0" max="100" ></p>
                     </div>
 
                     <div class="form-group">
@@ -90,11 +90,11 @@
 
                     <div class="form-group">
                         <p>Введите количество часов:</p>
-                        <p><input type="number" class="form-control" size="3" name="times" min="1" max="5" value="1"></p>
+                        <p><input type="number" class="form-control" size="3" name="time" min="1" max="5" value="1"></p>
                     </div>
                      <textarea placeholder="Описание билета" class="textarea" name="name" required></textarea>
                     <input type="hidden" name="_csrf" value="${_csrf.token}" />
-                    <div><input type="submit" value="Добавить билет" id="login-button" /></div>
+                    <div><input type="submit" value="Добавить билет" onclick="return validate_form(this.form)" id="login-button" /></div>
                 </form>
             </div>
 
@@ -159,7 +159,7 @@
 
 
 <script src="/static/plugins.js"></script>
-
+<script src="/static/validation.js"></script>
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <script src="/static/main.js"></script>

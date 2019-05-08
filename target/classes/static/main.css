@@ -4788,7 +4788,9 @@ header {
 Menu Page
  */
 .menu-sectn {
-  padding: 80px 0 0; }
+  padding: 80px 0 0;
+background-color: rgba(68, 189, 138, 0.61)
+}
 
 .menu-page header .banner {
   margin: 30px 0; }
@@ -5888,3 +5890,45 @@ section {
 
 section, .inner-page header {
   overflow: hidden; }
+
+.edit {
+    border: solid #13544f 2px;
+    background-color: #9cd9e6;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+
+.updatebut {
+    /*background-color: #afa3a2; !* Green *!*/
+    border: 2px solid #afa3a2; /* Green */
+    border-radius: 8px;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.updatebut:hover {
+    background-color: #afa3a2; /* Green */
+    color: white;
+}
+
+.updatet {
+    border: solid #13544f 2px;
+    background-color: #9cd9e6;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: smaller;
+}
+
+.updatet:hover {
+    background-color: #afa3a2; /* Green */
+    color: white;
+}

@@ -115,7 +115,7 @@
 
 
 <script src="/static/plugins.js"></script>
-
+<script src="/static/validation.js"></script>
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <script src="/static/main.js"></script>

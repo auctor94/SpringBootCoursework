@@ -63,7 +63,6 @@
     <div class="container">
         <div class="section-heading-type2">
             <h2>Ваши заказы, ${usernamet}</h2>
-            <p>for delete push the button</p>
         </div>
     </div>
 

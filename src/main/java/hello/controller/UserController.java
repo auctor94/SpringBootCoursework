@@ -23,15 +23,6 @@ public class UserController {
     @Autowired
     private UserRepo userRepo;
 
-    @Autowired
-    private TicketsRepository ticketRepository;
-
-    @Autowired
-    private OrderRepository orderRepository;
-
-    @Autowired
-    private AmusementRepository amusementRepository;
-
     @GetMapping
     public String userList(Model model) {
         model.addAttribute("users", userRepo.findAll());
@@ -65,38 +56,5 @@ public class UserController {
         return "redirect:/user";
     }
 
-    @RequestMapping(value = "/addticket", method = RequestMethod.POST)
-    public String order(@RequestParam String cost, @RequestParam String name, @RequestParam String age,
-                        @RequestParam String time, @RequestParam String zone, @RequestParam String sale, Map<String, Object> model) {
-        Tickets n = new Tickets();
-        Amusement a;
-        double dnum = Double.parseDouble(cost);
-        n.setCost(dnum);
-        n.setNameTicket(name);
-        n.setAge(age);
-        int intnum = Integer.parseInt(time);
-        n.setTime(intnum);
-        a = amusementRepository.findOneByDepartment(zone);
-        n.setZone(a);
-        if (sale != "") {
-
-            dnum = Double.parseDouble(sale);
-            n.setSale(dnum);
-        }
-        ticketRepository.save(n);
-        Iterable<Tickets> ticketsIterable = ticketRepository.findAll();
-        model.put("tickets", ticketsIterable);
-        return "menu";
-    }
-
-    @GetMapping("/editticket/{ticket}")
-    public String editOrder(@PathVariable String ticket, Model model)
-    {
-        Tickets ticketsIterable = ticketRepository.findOneByTicketId(Integer.parseInt(ticket));
-        model.addAttribute("ticket", ticketsIterable);
-//изменяем заказ сохраняем и все
-
-        return "editticket";
-    }
 
 }

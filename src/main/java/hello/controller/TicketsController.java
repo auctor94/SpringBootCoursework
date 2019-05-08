@@ -51,9 +51,9 @@ public class TicketsController {
         for (Tickets i : ticketsIterable) {
             ListTickets tmp = new ListTickets();
             tmp.setAge(i.getAge());
-            tmp.setCost(String.valueOf(i.getCost()));
+            double check1 = i.getCost() - (i.getCost() / 100 * i.getSale());
+            tmp.setCost(String.valueOf(check1));
             tmp.setNameTicket(i.getNameTicket());
-            tmp.setSale(String.valueOf(i.getSale()));
             int check = i.getZone();
             temp = amusementRepository.findOneByAmusementId(check);
             tmp.setTime(String.valueOf(i.getTime()));
@@ -86,8 +86,9 @@ public class TicketsController {
 
 
     @RequestMapping(value = "/ordersdelete", method = RequestMethod.POST)
-    public String ordersDelete() {
-
+    public String ordersDelete(@RequestParam("orderID") String order) {
+        Orders current = orderRepository.findOneByOrderId(Integer.parseInt(order));
+        orderRepository.delete(current);
         return "redirect:/orders";
     }
 

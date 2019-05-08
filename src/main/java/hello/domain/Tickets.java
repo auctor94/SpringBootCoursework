@@ -33,7 +33,7 @@ public class Tickets {
     @Column(name="sale")
     private double sale;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinColumn(name = "zone", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
