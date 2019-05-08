@@ -34,7 +34,7 @@
                         </button>
                     </div>
 
-                    <a href="index.ftl" class="header-logo">Coffee and You
+                    <a href="index.ftl" class="header-logo">
                         <img src="/static/images/logo.png" alt="">
                     </a>
                     <div class="collapse navbar-collapse" id="coffeeNavbarPrimary">
@@ -52,7 +52,6 @@
         </nav>
 
         <div class="banner">
-            <!-- <div class="container">	</div> -->
             <img src="images/web_home.png" alt="">
 
         </div>

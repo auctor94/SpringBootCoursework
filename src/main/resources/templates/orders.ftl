@@ -47,7 +47,6 @@
                             <li><a href="/gallery">Оставить отзыв</a></li>
                             <li><a href="/contactus">Контакты</a></li>
                             <li><a href="/logout">Выйти из аккаунта</a></li>
-
                         </ul>
                     </div>
                 </div>
