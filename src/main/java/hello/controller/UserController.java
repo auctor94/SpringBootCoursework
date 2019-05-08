@@ -89,5 +89,14 @@ public class UserController {
         return "menu";
     }
 
+    @GetMapping("/editticket/{ticket}")
+    public String editOrder(@PathVariable String ticket, Model model)
+    {
+        Tickets ticketsIterable = ticketRepository.findOneByTicketId(Integer.parseInt(ticket));
+        model.addAttribute("ticket", ticketsIterable);
+//изменяем заказ сохраняем и все
+
+        return "editticket";
+    }
 
 }

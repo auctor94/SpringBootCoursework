@@ -65,12 +65,33 @@ public class TicketsController {
         return "menu";
     }
 
-    @GetMapping("/orders/{id}")
-    public String editOrder(@PathVariable String id)
+    @GetMapping("/ordersedit/{order}")
+    public String editOrder(@PathVariable String order, Model model)
     {
-        System.out.println(id);
-        return "menu";
+        Orders ordersIterable = orderRepository.findOneByOrderId(Integer.parseInt(order));
+        model.addAttribute("order", ordersIterable);
+//изменяем заказ сохраняем и все
+
+        return "ordersedit";
     }
+
+    @RequestMapping(value = "/ordersedit", method = RequestMethod.POST)
+    public String ordersEdit(@RequestParam(value = "date") String date, @RequestParam(value = "time") String time, @RequestParam("orderID") String order) {
+        Orders current = orderRepository.findOneByOrderId(Integer.parseInt(order));
+        current.setTime(time);
+        current.setDate(date);
+       orderRepository.save(current);
+        return "redirect:/orders";
+    }
+
+
+    @RequestMapping(value = "/ordersdelete", method = RequestMethod.POST)
+    public String ordersDelete() {
+
+        return "redirect:/orders";
+    }
+
+
 
     @GetMapping("/orders")
     public String orders(HttpServletRequest request,  Map<String, Object>  model) {
@@ -96,7 +117,7 @@ public class TicketsController {
             id_user = i.getId_user();
             if (id_user.getId().intValue() == current_id) {
 
-                temp.setId(String.valueOf(id_ticket.getTicketId()));
+                temp.setId(String.valueOf(i.getOrderId()));
                 temp.setType(id_ticket.getNameTicket());
                 if (id_ticket.getCost() != 0) {
                     temp.setCost(String.valueOf(id_ticket.getCost() - (id_ticket.getCost() / 100 * id_ticket.getSale())));

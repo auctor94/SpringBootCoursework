@@ -38,7 +38,7 @@
 
 					    <div class="collapse navbar-collapse" id="coffeeNavbarPrimary">
 					      <ul class="nav navbar-nav navbar-right">
-					        <li><a href="index">Домашняя страница</a></li>
+					        <li><a href="/index">Домашняя страница</a></li>
 					        <li><a href="menu">Билеты</a></li>
 					        <li class="active"><a>Заказ</a>
 					        </li>

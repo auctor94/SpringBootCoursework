@@ -2,7 +2,7 @@
 <html class="no-js" lang="">
 <head>
     <meta charset="utf-8">
-    <title>Welcome to Coffee and You | Menu page</title>
+    <title>Билеты</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -40,11 +40,11 @@
 
                     <div class="collapse navbar-collapse" id="coffeeNavbarPrimary">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="index">Домашняя страница</a></li>
-                            <li class="active"><a href="menu">Билеты</a></li>
-                            <li><a href="gallery">Заказ</a></li>
-                            <li><a href="store.html">store</a></li>
-                            <li><a href="contactus">Контакты</a></li>
+                            <li><a href="/index">Домашняя страница</a></li>
+                            <li class="active"><a href="/menu">Билеты</a></li>
+                            <li><a href="/orders">Заказы</a></li>
+                            <li><a href="/gallery">Оставить отзыв</a></li>
+                            <li><a href="/contactus">Контакты</a></li>
                             <li><a href="/logout">Выйти из аккаунта</a></li>
 
                         </ul>
@@ -60,14 +60,16 @@
 
 <section class="menu-sectn menu-list-page">
 
-
-        <div class="container">
-                            <div class="addticket"><a href="/tickets" style="font-size: smaller;">Добавить билет</a>\
-                            <p style="font-size: x-small;">Доступно только администраторам</p></div>
-                                <div class="section-heading-type2">
-                                <h2>Мы предлагаем различные виды услуг своим посетителям.</h2>
-                                <p>Чтобы забронировать билет, необходимо выброть его из слайдера снизу и нажать кнопку <b>Заказать</b></p>
-                                </div>
+    <div class="container">
+        <div class="addticket"><a href="/tickets" style="font-size: smaller;">Добавить билет</a>\
+            <p style="font-size: x-small;">Доступно только администраторам</p></div>
+        <div class="section-heading-type2">
+            <h2>Мы предлагаем различные виды услуг своим посетителям.</h2>
+            <p style="color: #white;">Чтобы забронировать билет, необходимо выброть его из слайдера снизу и нажать
+                кнопку <b>Заказать</b></p>
+            <p style="color: #white;">Чтобы редактировать данные билета, необходимо выброть его из слайдера снизу и
+                нажать кнопку <b>Изменить</b></p>
+        </div>
 
 
 						<#list tickets as ticket>
@@ -78,39 +80,43 @@
                                                 <div class="clearfix">
                                                     <div class="card-left">
                                                         <div class="cuisine-name"><b>Тип билета: ${ticket.age}</b></div>
-                                                        <div class="cuisine-detail"><b>Описание: ${ticket.nameTicket}</b></div>
+                                                        <div class="cuisine-detail">
+                                                            <b>Описание: ${ticket.nameTicket}</b></div>
                                                     </div>
                                                     <div class="card-right">
                                                         <div class="cuisine-price">
 									                        <#if ticket.sale??>
-                                                                <b>Стоимость билета: ${ticket.cost / 100 * ticket.sale} бел. руб.</b>
+                                                                <b>Стоимость
+                                                                    билета: ${ticket.cost?number - (ticket.cost?number/ 100 * ticket.sale?number)}
+                                                                    бел. руб.</b>
                                                             <#else>
 									                         <b>Стоимость билета: ${ticket.cost} бел. руб.</b>
-                                                          </#if>
+                                                            </#if>
                                                         </div>
-                                                        <p> <b>Доступные зоны: ${ticket.zone}</b></p>
+                                                        <p><b>Доступные зоны: ${ticket.zone}</b></p>
 
                                                     </div>
 
                                                 </div>
                                             </div>
-
-
-
                                         </div>
                                         <div class="cuisine-heart" style="float: right;"><b>Время действия билета:
-                                            ${ticket.time} ч.</b></div>
+                                            ${ticket.time} ч.</b>
+                                            <a href="/editticket/${ticket.ticketId}"  class="updatet">Изменить билет</a>
+                                        </div>
 
                                         <div class="menu-btn-holder clearfix" style="float: right; margin-top: 100px;">
                                             <form id="myform" action="/addorder" method="post">
                                                 <label for="start">Введите дату и время</label>
-                                                <input type="date" id="start" name="date" value="2018-07-22" min="2018-01-01" max="2019-12-31" style="width: 150px;">
-                                                <input type="time" id="start" name="time" >
-                                                <input type="submit" value="Заказать сейчас" id="login-button" />
+                                                <input type="date" id="start" name="date" value="2018-07-22"
+                                                       min="2018-01-01" max="2019-12-31" style="width: 150px;">
+                                                <input type="time" id="start" name="time" value="11:00">
+                                                <input type="submit" value="Заказать сейчас" class="updatet"/>
                                                 <input type="hidden" name="id" value="${ticket.ticketId}">
                                                 <input type="hidden" name="login" value="${usernamet}">
-                                                <input type="hidden" name="_csrf" value="${_csrf.token}" />
-                                                 </form>
+                                                <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                                            </form>
+
                                         </div>
                                     </div>
                                 </div>
@@ -119,8 +125,8 @@
                             администратор, то создайте новый билет.
                         </#list>
 
-        </div>
-    </section>
+    </div>
+</section>
 
 
 <section class="contact-sectn">
@@ -143,10 +149,11 @@
 
             <div class="footer-nav-wrapper">
                 <ul class="footer-nav clearfix">
-                    <li><a href="index">Домашняя страница</a></li>
-                    <li><a href="menu">Меню</a></li>
-                    <li><a href="contactus">Контакты</a></li>
-                    <li><a href="/logout">Выйти из аккаунта</a></li>
+                    <li><a href="/index">Домашняя страница</a></li>
+                    <li><a href=/menu">Билеты</a></li>
+                    <li><a href="/gallery">Оставить отзыв</a></li>
+                    <li><a href="/orders">Заказы</a></li>
+                    <li><a href="/contactus">Контакты</a></li>
                 </ul>
             </div>
         </div>
@@ -154,7 +161,9 @@
     <div class="lower">
         <div class="container">
             <a href="#" class="back-to-top">↑↑↑</a>
-            <small>&copy; 2019 Timothy fcuking coursework. Trademarks and brands are the property of their respective owners.</small>
+            <small>&copy; 2019 Timothy fcuking coursework. Trademarks and brands are the property of their respective
+                owners.
+            </small>
         </div>
     </div>
 </footer>

@@ -42,12 +42,9 @@
                     <div class="collapse navbar-collapse" id="coffeeNavbarPrimary">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="/index">Домашняя страница</a></li>
-                            <li><a href="/menu">Билеты</a></li>
-                            <li class="active"><a href="/orders">Заказы</a></li>
-                            <li><a href="/gallery">Оставить отзыв</a></li>
+                            <li class="active"><a href="/menu">Билеты</a></li>
+                            <li><a href="/gallery">Заказ</a></li>
                             <li><a href="/contactus">Контакты</a></li>
-                            <li><a href="/logout">Выйти из аккаунта</a></li>
-
                         </ul>
                     </div>
                 </div>
@@ -62,22 +59,29 @@
 <section class="menu-sectn menu-list-page">
     <div class="container">
         <div class="section-heading-type2">
-            <h2>Ваши заказы, ${usernamet}</h2>
-            <p>for delete push the button</p>
+             <#if order??>
+                 <form action="/ordersedit" id="reservation-form" method="post"  class="clearfix" data-parsley-validate>
+                 <div class="form-group edit"> <label for="start">Введите новую дату</label> <input type="date" id="start" name="date" value="${order.date}" min="2018-01-01" max="2019-12-31" style="width: 150px;">
+ <label for="start1">Введите новое время</label> <input type="time" id="start1" name="time" value="${order.time}">  <input type="hidden" value="${order.orderId}" name="orderID" >
+                     <input type="hidden" value="${_csrf.token}" name="_csrf" >
+                     <button class="updatebut" type="submit">Изменить</button></div>
+
+
+                 </form>
+                 <form action="/ordersdelete" id="reservation-form" method="post"  class="clearfix" data-parsley-validate>
+                     <div class="form-group"> <input type="hidden" value="${order.orderId}" name="orderID" ></div>
+                     <input type="hidden" value="${_csrf.token}" name="_csrf" >
+                     <div class="form-group edit">  <button class="updatebut" type="submit">Удалить заказ</button></div>
+                 </form>
+             <#else>
+									                         <b>У вас нет заказов! <a href="menu">Заказать билет сейчас </a></b>
+             </#if>
         </div>
     </div>
 
-    <#if table??>
-               <table id="racetimes">
-                   <tr id="firstrow"><th>Id заказа</th><th>Тип билета</th><th>Время начала сессии</th><th>Стоимость</th><th>Дата</th><th>Действия</th></tr>
-                     <#list table as order>
-                        <tr><td>${order.id}</td><td>${order.type}</td><td>${order.times}</td><td>${order.cost}</td><td>${order.date}</td><td><a href="/ordersedit/${order.id}"> Удалить или изменить</a></td></tr>
-                     </#list>
 
-               </table>
-    <#else>
-									                         <b>У вас нет заказов! <a href="menu">Заказать билет сейчас </a></b>
-    </#if>
+
+
 
 
 </section>
@@ -90,11 +94,10 @@
 
             <div class="footer-nav-wrapper">
                 <ul class="footer-nav clearfix">
-                    <li><a href="/index">Домашняя страница</a></li>
-                    <li><a href=/menu">Билеты</a></li>
-                    <li><a href="/gallery">Оставить отзыв</a></li>
-                    <li><a href="/orders">Заказы</a></li>
-                    <li><a href="/contactus">Контакты</a></li>
+                    <li><a href="index">Домашняя страница</a></li>
+                    <li><a href="menu">Меню</a></li>
+                    <li><a href="gallery">заказ</a></li
+                    <li><a href="contactus">Contact</a></li>
                 </ul>
             </div>
         </div>
