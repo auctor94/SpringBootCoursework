@@ -12,8 +12,8 @@ import java.util.List;
 
 public interface OrderRepository extends JpaRepository<Orders,Long> {
     Orders findOneByOrderId(int id);
-    @Modifying
-    @Transactional
-    @Query(value = "SELECT u FROM Orders u WHERE u.id_ticket = :id_ticket")
-    List<Orders> findOrdersById_ticket(@Param("id_ticket") Integer id_ticket);
+//    @Modifying
+//    @Transactional
+//    @Query(value = "SELECT u FROM Orders u WHERE u.id_ticket = :id_ticket")
+//    List<Orders> findOrdersById_ticket(@Param("id_ticket") Integer id_ticket);
     }

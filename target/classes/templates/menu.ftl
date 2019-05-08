@@ -85,13 +85,7 @@
                                                     </div>
                                                     <div class="card-right">
                                                         <div class="cuisine-price">
-									                        <#if ticket.sale??>
-                                                                <b>Стоимость
-                                                                    билета: ${ticket.cost?number - (ticket.cost?number/ 100 * ticket.sale?number)}
-                                                                    бел. руб.</b>
-                                                            <#else>
 									                         <b>Стоимость билета: ${ticket.cost} бел. руб.</b>
-                                                            </#if>
                                                         </div>
                                                         <p><b>Доступные зоны: ${ticket.zone}</b></p>
 

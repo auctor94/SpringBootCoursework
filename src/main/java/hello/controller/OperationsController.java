@@ -56,7 +56,7 @@ public class OperationsController {
         ticketRepository.save(n);
         Iterable<Tickets> ticketsIterable = ticketRepository.findAll();
         model.put("tickets", ticketsIterable);
-        return "menu";
+        return "redirect:/menu";
     }
 
     @GetMapping("/editticket/{ticket}")
@@ -96,10 +96,19 @@ public class OperationsController {
         Tickets current = ticketRepository.findOneByTicketId(Integer.parseInt(ticket));
         System.out.println(current.getTicketId());
 
-       List<Orders> result = orderRepository.findOrdersById_ticket(current.getTicketId());
-        System.out.println(result.size());
+       //List<Orders> result = orderRepository.findOrdersById_ticket(current.getTicketId());
+        //System.out.println(result.size());
             // your code end
-            //ticketRepository.delete(current);
+
+        Iterable<Orders> ordersIterable = orderRepository.findAll();
+
+        for (Orders i : ordersIterable) {
+            Tickets check = i.getId_ticket();
+            if (Integer.parseInt(ticket) == check.getTicketId()) {
+                orderRepository.delete(i);
+            }
+        }
+        ticketRepository.delete(current);
             return "redirect:/orders";
 
     }
