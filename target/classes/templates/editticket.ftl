@@ -100,7 +100,7 @@
                 <form action="/ticketdelete" id="reservation-form" method="post"  class="clearfix" data-parsley-validate>
                     <div class="form-group"> <input type="hidden" value="${ticket.ticketId}" name="orderID" ></div>
                     <input type="hidden" value="${_csrf.token}" name="_csrf" >
-                    <div class="form-group edit">  <button class="updatebut" type="submit">Удалить билет</button></div>
+                    <div class="form-group">  <button class="updatebut" type="submit">Удалить билет</button></div>
                 </form>
             </div>
 
