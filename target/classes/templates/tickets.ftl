@@ -38,11 +38,12 @@
 
                     <div class="collapse navbar-collapse" id="coffeeNavbarPrimary">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="index">Домашняя страница</a></li>
-                            <li><a href="menu">Билеты</a></li>
-                        <#--<li><a href="store.html">store</a></li>-->
-                        <#--<li><a href="contactus">Контакты</a></li>-->
-                        <#--<li><a href="shopcart.html">Cart </a></li>-->
+                            <li><a href="/index">Домашняя страница</a></li>
+                            <li><a href="/menu">Билеты</a></li>
+                            <li><a href="/orders">Заказы</a></li>
+                            <li><a href="/gallery">Оставить отзыв</a></li>
+                            <li><a href="/contactus">Контакты</a></li>
+                            <li><a href="/logout">Выйти из аккаунта</a></li>
                         </ul>
                     </div>
                 </div>
@@ -137,11 +138,11 @@
         <div class="container">
             <div class="footer-nav-wrapper">
                 <ul class="footer-nav clearfix">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="shopcart.html">Cart</a></li>
-                    <li><a href="contactus.html">Contact</a></li>
+                    <li><a href="/index">Домашняя страница</a></li>
+                    <li><a href=/menu">Билеты</a></li>
+                    <li><a href="/gallery">Оставить отзыв</a></li>
+                    <li><a href="/orders">Заказы</a></li>
+                    <li><a href="/contactus">Контакты</a></li>
                 </ul>
             </div>
         </div>

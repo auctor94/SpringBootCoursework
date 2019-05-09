@@ -34,7 +34,7 @@
                         </button>
                     </div>
 
-                    <a href="index.ftl" class="header-logo">Coffee and You
+                    <a href="index.ftl" class="header-logo">
                         <img src="/static/images/logo.png" alt="">
                     </a>
                     <div class="collapse navbar-collapse" id="coffeeNavbarPrimary">
@@ -52,7 +52,6 @@
         </nav>
 
         <div class="banner">
-            <!-- <div class="container">	</div> -->
             <img src="images/web_home.png" alt="">
 
         </div>
@@ -263,210 +262,90 @@
         <div>
             <div class="section-number"><span>08</span></div>
             <div class="section-heading">
-                <h1><span>View our</span></h1>
-                <h2>Events</h2>
+                <h1><span>Зацените наши</span></h1>
+                <h2>Мероприятия</h2>
             </div>
         </div>
 
         <div class="event-container" id="event-owl">
             <div class="event-single clearfix">
-                <img class="star-mark" src="images/star-fav.png" alt="">
                 <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="images/event-img.jpg" alt="">
+                    <img src="/static/images/services/pk.jpg" alt="">
                 </div>
                 <div class="event-desc">
-                    <h3>Event name goes here</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed, qui quam ipsa nobis,
-                        dolore assumenda culpa earum esse accusantium quas quidem iusto in aut reiciendis, provident,
-                        deserunt iste perferendis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquam exercitationem repellat,
-                        harum minima, tenetur esse! Aut neque ex, expedita fugiat, alias animi consequatur culpa
-                        dignissimos laboriosam non. Eum, deleniti.</p>
-                    <div class="event-timer" data-date="2016/10/31">
-                        <div class="times-circle">
-                            <h3>25</h3>
-                            <h5>days</h5>
-                        </div>
-                        <div class="times-circle">
-                            <h3>18</h3>
-                            <h5>hours</h5>
-                        </div>
-                        <div class="times-circle">
-                            <h3>59</h3>
-                            <h5>minutes</h5>
-                        </div>
-                        <div class="times-circle">
-                            <h3>44</h3>
-                            <h5>seconds</h5>
-                        </div>
-                    </div>
+                    <h3>Пиратский корабль</h3>
+                    <p>Это прекрасная возможность для маленького юбиляра стать капитаном пиратского корабля и вместе с друзьями – настоящими членами пиратского экипажа – найти в парке спрятанное Чёрной бородой сокровище!</p>
+                    <p>На празднике вас ждет:
+
+                        посвящение юбиляра в капитаны корабля
+                        украшение экипажа
+                        клятва пирата
+                        весёлые игры в воде
+                        поиск пиратских сокровищ
+                    </p>
+<p>Праздник начинается по прибытии в парк, где юбиляра и его друзей встречает Пират, который ознакомит новый экипаж корабля с ожидающими его испытаниями. В комнате «Макамака» детей ждёт украшение экипажа и нанесение татуировок. Путешествие на корабле перенесёт детей к Бассейну с волнами, где их ждут игры на выносливость и реакцию, а также поиск сокровища на «Игровой площадке».</p>
                 </div>
             </div>
             <div class="event-single clearfix">
-                <img class="star-mark" src="images/star-fav.png" alt="">
                 <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="images/event-img.jpg" alt="">
+                    <img src="/static/images/services/dz.jpg.jpg" alt="">
                 </div>
                 <div class="event-desc">
-                    <h3>Event name goes here 2</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed, qui quam ipsa nobis,
-                        dolore assumenda culpa earum esse accusantium quas quidem iusto in aut reiciendis, provident,
-                        deserunt iste perferendis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquam exercitationem repellat,
-                        harum minima, tenetur esse! Aut neque ex, expedita fugiat, alias animi consequatur culpa
-                        dignissimos laboriosam non. Eum, deleniti.</p>
-                    <div class="event-timer" data-date="2016/11/30">
-                        <div class="times-circle">
-                            <h3>25</h3>
-                            <h5>days</h5>
-                        </div>
-                        <div class="times-circle">
-                            <h3>18</h3>
-                            <h5>hours</h5>
-                        </div>
-                        <div class="times-circle">
-                            <h3>59</h3>
-                            <h5>minutes</h5>
-                        </div>
-                        <div class="times-circle">
-                            <h3>44</h3>
-                            <h5>seconds</h5>
-                        </div>
-                    </div>
+                    <h3>Шальной Дикий Запад</h3>
+                    <p>Это прекрасная возможность для маленького юбиляра познакомиться с чокнутым индейцем и его другом ковбоем, которые поделятся с детьми своими впечатлениями, историями, будут играть в игры, которые характерны только для краев Дикого Запада.</p>
+                    <p>На празднике вас ждет:
+
+                        Знакомство со «свихнувшимся» индейцем и веселым ковбоем
+                        История, объясняющая причины появления этих персонажей в аквапарке Vichy
+                        Поиск таинственного сундука
+
+                        Задания, игры, развлечения в воде и не только
+                    </p>
+                    <p>
+                        Дикий Запад в аквапарке Coursework? Что здесь делают ковбой и индеец? Почему они ведут себя так странно? Смело делай шаг вперед и погрузись в полное приключений путешествие с веселым ковбоем и чокнутым индейцем. Они не умеют грустить, зато умеют играть, рассказывать интересные истории и танцевать странные танцы. И у них точно готовы для Вас веселые приключения, пахнущие Диким Западом...
+                    </p>
+
                 </div>
             </div>
             <div class="event-single clearfix">
-                <img class="star-mark" src="images/star-fav.png" alt="">
                 <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="images/event-img.jpg" alt="">
+                    <img src="/static/images/services/pp.jpg" alt="">
                 </div>
                 <div class="event-desc">
-                    <h3>Event name goes here 3</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed, qui quam ipsa nobis,
-                        dolore assumenda culpa earum esse accusantium quas quidem iusto in aut reiciendis, provident,
-                        deserunt iste perferendis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquam exercitationem repellat,
-                        harum minima, tenetur esse! Aut neque ex, expedita fugiat, alias animi consequatur culpa
-                        dignissimos laboriosam non. Eum, deleniti.</p>
-                    <div class="event-timer" data-date="2016/11/1">
-                        <div class="times-circle">
-                            <h3>25</h3>
-                            <h5>days</h5>
-                        </div>
-                        <div class="times-circle">
-                            <h3>18</h3>
-                            <h5>hours</h5>
-                        </div>
-                        <div class="times-circle">
-                            <h3>59</h3>
-                            <h5>minutes</h5>
-                        </div>
-                        <div class="times-circle">
-                            <h3>44</h3>
-                            <h5>seconds</h5>
-                        </div>
-                    </div>
+                    <h3>Полинезийское пиршество</h3>
+                    <p>Праздник на острове Малой Полинезии – это прекрасная возможность весело отпраздновать день рождения по полинезийским традициям и ритуалам!</p>
+                    <p>На празднике вас ждет:
+
+                        встреча с полинезийцами;
+                        переодевание в полинезийские одежды;
+                        поиск Чёрной жемчужины;
+                        весёлые игры в воде;
+                        ритуал Бога Тики и загадывание желаний участников праздника.
+                    </p>
+                    <p>Праздник начинается по прибытии в парк, где детей встречают полинезийцы. На пути в комнату «Макамака» детям будет поведана легенда о Полинезийский Божествах, здесь дети будут украшены татуировками и облачены в полинезийские одежды. Исполняя желания Полинезийских Богов, дети продолжат игры в Бассейне с волнами и займутся поисками Чёрной жемчужины на детской игровой площадке.</p>
+
                 </div>
             </div>
             <div class="event-single clearfix">
-                <img class="star-mark" src="images/star-fav.png" alt="">
                 <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="images/event-img.jpg" alt="">
+                    <img src="/static/images/services/ps.jpg" alt="">
                 </div>
                 <div class="event-desc">
-                    <h3>Event name goes here 5</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed, qui quam ipsa nobis,
-                        dolore assumenda culpa earum esse accusantium quas quidem iusto in aut reiciendis, provident,
-                        deserunt iste perferendis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquam exercitationem repellat,
-                        harum minima, tenetur esse! Aut neque ex, expedita fugiat, alias animi consequatur culpa
-                        dignissimos laboriosam non. Eum, deleniti.</p>
-                    <div class="event-timer" data-date="2016/10/30">
-                        <div class="times-circle">
-                            <h3>25</h3>
-                            <h5>days</h5>
-                        </div>
-                        <div class="times-circle">
-                            <h3>18</h3>
-                            <h5>hours</h5>
-                        </div>
-                        <div class="times-circle">
-                            <h3>59</h3>
-                            <h5>minutes</h5>
-                        </div>
-                        <div class="times-circle">
-                            <h3>44</h3>
-                            <h5>seconds</h5>
-                        </div>
-                    </div>
+                    <h3>Пляж спасателей</h3>
+                    <p>Данная программа – это возможность для юбиляра и его гостей вблизи познакомиться с бесконечно увлекательной жизнью спасателей. Какой аквапарк может быть без смелых спасателей? И кто не хотел бы оказаться на месте спасателя и испытать свои силы, смелость и решительность? Так летите же на всех парусах на пляж спасателей! Если Вы думаете, что спасателям достаточно быть смелыми и сильными, то сильно заблуждаетесь. Спасатели должны быть красивыми и загорелыми, иначе они не смогут ощущать комфорт и уверенность в себе. Наша, спасателей, цель – показать Вам закулисную жизнь спасателей и дать почувствовать себя самыми настоящими спасателями, ну и, конечно, раскрыть все самые тайные секреты.</p>
+                    <p>На празднике вас ждет:
+
+                        Знакомство с настоящей работой спасателя;
+                        Быстрый загар и наращивание мышечной массы;
+                        Обучение основным, так нужным для спасателей «движеньицам»;
+                        Присяга спасателя;
+                        Задания, игры, развлечения;
+                        Сладкий финал.
+                    </p>
+<p>Узнай, почему так здорово быть спасателем!:)</p>
                 </div>
             </div>
-            <div class="event-single clearfix">
-                <img class="star-mark" src="images/star-fav.png" alt="">
-                <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="images/event-img.jpg" alt="">
-                </div>
-                <div class="event-desc">
-                    <h3>Event name goes here</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed, qui quam ipsa nobis,
-                        dolore assumenda culpa earum esse accusantium quas quidem iusto in aut reiciendis, provident,
-                        deserunt iste perferendis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquam exercitationem repellat,
-                        harum minima, tenetur esse! Aut neque ex, expedita fugiat, alias animi consequatur culpa
-                        dignissimos laboriosam non. Eum, deleniti.</p>
-                    <div class="event-timer" data-date="2016/10/29">
-                        <div class="times-circle">
-                            <h3>25</h3>
-                            <h5>days</h5>
-                        </div>
-                        <div class="times-circle">
-                            <h3>18</h3>
-                            <h5>hours</h5>
-                        </div>
-                        <div class="times-circle">
-                            <h3>59</h3>
-                            <h5>minutes</h5>
-                        </div>
-                        <div class="times-circle">
-                            <h3>44</h3>
-                            <h5>seconds</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="event-single clearfix">
-                <img class="star-mark" src="images/star-fav.png" alt="">
-                <div class="imgLiquidFill imgLiquid event-img">
-                    <img src="images/event-img.jpg" alt="">
-                </div>
-                <div class="event-desc">
-                    <h3>Event name goes here</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus sed, qui quam ipsa nobis,
-                        dolore assumenda culpa earum esse accusantium quas quidem iusto in aut reiciendis, provident,
-                        deserunt iste perferendis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aliquam exercitationem repellat,
-                        harum minima, tenetur esse! Aut neque ex, expedita fugiat, alias animi consequatur culpa
-                        dignissimos laboriosam non. Eum, deleniti.</p>
-                    <div class="event-timer" data-date="2016/10/28">
-                        <div class="times-circle">
-                            <h3>25</h3>
-                            <h5>days</h5>
-                        </div>
-                        <div class="times-circle">
-                            <h3>18</h3>
-                            <h5>hours</h5>
-                        </div>
-                        <div class="times-circle">
-                            <h3>59</h3>
-                            <h5>minutes</h5>
-                        </div>
-                        <div class="times-circle">
-                            <h3>44</h3>
-                            <h5>seconds</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>

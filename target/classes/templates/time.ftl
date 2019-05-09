@@ -32,10 +32,12 @@
 
                     <div class="collapse navbar-collapse" id="coffeeNavbarPrimary">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="index">Домашняя страница</a></li>
-                            <li><a href="menu">Меню</a></li>
-                            <li><a href="gallery">Заказ</a></li>
-                            <li class="active"><a href="contactus">Контакты</a></li>
+                            <li><a href="/index">Домашняя страница</a></li>
+                            <li><a href="/menu">Билеты</a></li>
+                            <li><a href="/orders">Заказы</a></li>
+                            <li><a href="/gallery">Оставить отзыв</a></li>
+                            <li><a href="/contactus">Контакты</a></li>
+                            <li><a href="/logout">Выйти из аккаунта</a></li>
                         </ul>
                     </div>
                 </div>

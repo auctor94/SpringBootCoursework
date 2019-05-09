@@ -1,8 +1,13 @@
-<#import "parts/common.ftl" as c>
-<#import "parts/login.ftl" as l>
-
-<@c.page>
-Add new user
+<#import "parts/registration.ftl" as l>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <link rel="stylesheet" href="/static/login.css">
+</head>
+<body>
 ${message}
 <@l.login "/registration" />
-</@c.page>
+</body>
+</html>

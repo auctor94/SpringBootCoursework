@@ -5,14 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Hello</title>
-    <link rel="stylesheet/less" type="text/css" href="/static/login.less">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
-    <script src="/static/login.js"></script>
+    <link rel="stylesheet" href="/static/login.css">
 </head>
 <body>
-Login Page
 <@l.login "/login" />
-<a href="/registration">Add new user</a>
 </body>
 </html>
 

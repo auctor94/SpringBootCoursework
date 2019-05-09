@@ -10,7 +10,7 @@
 </div>
     <form form action="${path}" method="post" class="log-in" >
         <h4><span>Приветствуем вас</span></h4>
-        <p> Войдите в аккаунт для дальнейшего пользования функционалом сайта:</p>
+        <p> Введите данные нового пользователя:</p>
         <div class="floating-label">
             <input type="text" name="username" id="email" placeholder="Username"/>
             <label for="email">Логин:</label>
@@ -47,24 +47,8 @@
             </div>
             <input type="hidden" name="_csrf" value="${_csrf.token}" />
         </div>
-        <button type="submit" >Войти</button>
-        <a href="/registration">Регистрация</a>
+        <button type="submit" >Зарегестрироваться</button>
     </form>
 
 </div>
 </#macro>
-
-<#macro logout>
-<div class="wrapper">
-<div class="container">
-    <form action="/logout" method="post" class="form">
-        <input type="submit" value="Sign Out" id="login-button"/>
-        <input type="hidden" name="_csrf" value="${_csrf.token}" />
-    </form>
-</div></div>
-</#macro>
-
-
-
-
-
